@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/vuetest-e2e"
+    },
+    {
+      "path": "./apps/vuetest"
+    }
+  ]
+}
