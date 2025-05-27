@@ -1,14 +1,18 @@
 <script setup lang="ts">
-
-
-
 import { useRoute } from 'vue-router';
-import { computed, onMounted, watch } from 'vue';
+
+const navLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/increment', label: 'Increment Number' },
+  { to: '/traffic', label: 'Traffic Lights' }
+];
 
 const route = useRoute();
 const pageName = computed(() => {
-  const segments = route.path.split('/').filter(Boolean);
-  return segments.length === 0 ? 'Home' : segments[segments.length - 1].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  // Find the nav link whose path matches the current route
+  const found = navLinks.find(link => link.to === route.path);
+  return found ? found.label : 'Vue Test App';
 });
 
 onMounted(() => {
@@ -27,17 +31,11 @@ watch(
   <main>
     <header>
       <nav>
-        <NuxtLink to="/">
-          Home
-        </NuxtLink>
-        <NuxtLink to="/about">
-          About
-        </NuxtLink>
-        <NuxtLink to="/increment">
-          Increment Number
-        </NuxtLink>
-        <NuxtLink to="/traffic">
-          Traffic Lights
+        <NuxtLink
+          v-for="(link, idx) in navLinks" 
+          :key="idx"
+        >
+          {{ link.label }}
         </NuxtLink>
       </nav>
     </header>
