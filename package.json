@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test": "nx run-many --target=test,lint",
+    "test": "nx run-many --target=test,lint,build",
     "start": "nx run vuetest:serve"
   },
   "private": true,
