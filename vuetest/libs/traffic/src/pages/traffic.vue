@@ -39,6 +39,15 @@ function nextLight() {
       </p>
     </div>
   </div>
+  <div v-else-if="currentLight === null">
+    <p>Loading...</p>
+  </div>
+  <div v-else>
+    <p>Invalid light parameter.</p>
+    <button @click="nextLight">
+      Reset to Default Light
+    </button>
+  </div>
 </template>
 
 <style scoped>
