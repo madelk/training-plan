@@ -1,44 +1,43 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue';
+import { getNextLight, isValidLight, lightType, defaultLight } from "./traffic-helper";
 import { useRoute, useRouter } from 'vue-router';
-
-const TRAFFIC_LIGHTS = ['red', 'red-yellow', 'green', 'yellow'];
 const route = useRoute();
 const router = useRouter();
-const currentLight = ref(0);
-const light = computed(() => TRAFFIC_LIGHTS[currentLight.value]);
+const currentLight = ref<lightType | null>(null);
+const light = computed(() => currentLight.value);
 
-// Set initial state from URL
 onMounted(() => {
   const lightParam = route.query.light;
-  if (typeof lightParam === 'string') {
-    const idx = TRAFFIC_LIGHTS.indexOf(lightParam);
-    if (idx !== -1) {
-      currentLight.value = idx;
-    }
+  if (isValidLight(lightParam)) {
+    currentLight.value = lightParam;
+  } else {
+    currentLight.value = defaultLight;
   }
 });
 
 // Update URL when light changes
 watch(currentLight, (val) => {
   router.replace({
-    query: { ...route.query, light: TRAFFIC_LIGHTS[val] }
+    query: { ...route.query, light: val }
   });
 });
 
 function nextLight() {
-  currentLight.value = (currentLight.value + 1) % TRAFFIC_LIGHTS.length;
+  currentLight.value = getNextLight(currentLight.value ?? defaultLight);
 }
 </script>
 
 <template>
-  <button @click="nextLight">
-    Next Light
-  </button>
-  <div>
-    <p :class="light">
-      Current light: {{ light }}
-    </p>
+  <div v-if="currentLight">
+    <button @click="nextLight">
+      Next Light
+    </button>
+    <div>
+      <p :class="light">
+        Current light: {{ light }}
+      </p>
+    </div>
   </div>
 </template>
 
