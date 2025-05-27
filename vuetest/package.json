@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test": "nx run-many --target=test,lint --all --parallel",
-    "start" : "nx run vuetest:serve"
+    "test": "nx run-many --target=test,lint",
+    "start": "nx run vuetest:serve"
   },
   "private": true,
   "dependencies": {},
