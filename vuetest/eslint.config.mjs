@@ -8,6 +8,9 @@ export default [
   ...pluginVue.configs['flat/recommended'],
   {
     ignores: [
+      '**/.nuxt',
+      '**/.output',
+      '**/.node_modules',
       '**/dist',
       '**/vite.config.*.timestamp*',
       '**/vitest.config.*.timestamp*',
@@ -16,6 +19,12 @@ export default [
   },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
+    languageOptions: {
+      parserOptions: {
+        ecmaVersion: 2020,
+        parser: await import('@typescript-eslint/parser'),
+      },
+    },
     rules: {
       '@nx/enforce-module-boundaries': [
         'error',

@@ -1,21 +1,9 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import js from '@eslint/js';
+import vue from 'eslint-plugin-vue';
 import baseConfig from '../../eslint.config.mjs';
-const compat = new FlatCompat({
-  baseDirectory: dirname(fileURLToPath(import.meta.url)),
-  recommendedConfig: js.configs.recommended,
-});
 
 export default [
   ...baseConfig,
-  {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
-    // Override or add rules here
-    rules: {},
-  },
-  ...compat.extends('@nuxt/eslint-config'),
+  ...vue.configs['flat/recommended'],
   {
     files: ['**/*.vue'],
     languageOptions: {
@@ -25,6 +13,9 @@ export default [
     },
   },
   {
-    ignores: ['.nuxt/**', '.output/**', 'node_modules'],
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
   },
 ];
