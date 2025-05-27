@@ -1,4 +1,27 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+
+
+import { useRoute } from 'vue-router';
+import { computed, onMounted, watch } from 'vue';
+
+const route = useRoute();
+const pageName = computed(() => {
+  const segments = route.path.split('/').filter(Boolean);
+  return segments.length === 0 ? 'Home' : segments[segments.length - 1].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+});
+
+onMounted(() => {
+  document.title = `Vue Test App - ${pageName.value}`;
+});
+
+watch(
+  () => route.path,
+  () => {
+    document.title = `Vue Test App - ${pageName.value}`;
+  }
+);
+</script>
 
 <template>
   <main>
@@ -11,10 +34,10 @@
           About
         </NuxtLink>
         <NuxtLink to="/increment">
-          Increment
+          Increment Number
         </NuxtLink>
         <NuxtLink to="/traffic">
-          Traffic
+          Traffic Lights
         </NuxtLink>
       </nav>
     </header>

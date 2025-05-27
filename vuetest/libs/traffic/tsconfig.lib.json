@@ -4,6 +4,7 @@
     "outDir": "dist",
     "types": ["vite/client"],
     "rootDir": "src",
+    "lib": ["es2022", "dom"],
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "resolveJsonModule": true,

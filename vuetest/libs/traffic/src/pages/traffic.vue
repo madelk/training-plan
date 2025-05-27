@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue';
-import { getNextLight, isValidLight, lightType, defaultLight } from "./traffic-helper";
+import { getNextLight, isValidLight, lightType, defaultLight } from "../utils/traffic-helper";
 import { useRoute, useRouter } from 'vue-router';
 const route = useRoute();
 const router = useRouter();
-const currentLight = ref<lightType | null>(null);
+const currentLight = ref<lightType | undefined>(undefined);
 const light = computed(() => currentLight.value);
 
 onMounted(() => {
@@ -16,15 +16,14 @@ onMounted(() => {
   }
 });
 
-// Update URL when light changes
-watch(currentLight, (val) => {
+watch(currentLight, (newCurrentLight) => {
   router.replace({
-    query: { ...route.query, light: val }
+    query: { ...route.query, light: newCurrentLight }
   });
 });
 
 function nextLight() {
-  currentLight.value = getNextLight(currentLight.value ?? defaultLight);
+  currentLight.value = getNextLight(currentLight.value);
 }
 </script>
 
