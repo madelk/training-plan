@@ -23,5 +23,5 @@ export default defineNuxtConfig({
   vite: {
     plugins: [nxViteTsPaths()],
   },
-  extends: ['../../libs/increment'],
+  extends: ['@vuetest/increment', '@vuetest/traffic'],
 });

@@ -13,6 +13,9 @@
         <NuxtLink to="/increment">
           Increment
         </NuxtLink>
+        <NuxtLink to="/traffic">
+          Traffic
+        </NuxtLink>
       </nav>
     </header>
     <nuxt-page />
