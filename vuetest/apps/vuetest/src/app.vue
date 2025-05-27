@@ -32,8 +32,9 @@ watch(
     <header>
       <nav>
         <NuxtLink
-          v-for="(link, idx) in navLinks" 
-          :key="idx"
+          v-for="(link) in navLinks" 
+          :key="link.to"
+          :to="link.to"
         >
           {{ link.label }}
         </NuxtLink>
