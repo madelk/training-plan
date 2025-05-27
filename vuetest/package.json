@@ -55,6 +55,7 @@
     "vue-tsc": "^2.2.8"
   },
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "libs/*"
   ]
 }

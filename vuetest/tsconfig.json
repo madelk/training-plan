@@ -8,6 +8,9 @@
     },
     {
       "path": "./apps/vuetest"
+    },
+    {
+      "path": "./libs/increment"
     }
   ]
 }
