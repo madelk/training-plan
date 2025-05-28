@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useQuery } from '@tanstack/vue-query';
-import loadingIndicator from './loadingIndicator.vue'
+import { LoadingIndicator } from '@vuetest/components';
 
 interface Todo {
   userId: number;
@@ -45,10 +45,8 @@ onMounted(async () => {
 <template>
   <section>
     <h2>Todo List</h2>
-    <loadingIndicator :is-loading="isLoading" />
-    <ul
-      style="list-style-type: none; padding: 0"
-    >
+    <LoadingIndicator :is-loading="isLoading" />
+    <ul style="list-style-type: none; padding: 0">
       <li
         v-for="todo in data"
         :key="todo.id"
@@ -65,18 +63,15 @@ onMounted(async () => {
           style="vertical-align: middle"
           type="checkbox"
           :checked="todo.completed"
-        >
-        <label
-          style="margin-left: 10px"
-          :for="`todo-checkbox-${todo.id}`"
-        >
+        />
+        <label style="margin-left: 10px" :for="`todo-checkbox-${todo.id}`">
           {{ todo.title }}
         </label>
         <span style="font-size: 0.8em; color: gray; margin-left: 10px">
           Assigned to:
           {{
             users.find((user) => user.id === todo.userId)?.username ||
-              'Unknown User'
+            'Unknown User'
           }}
         </span>
       </li>
