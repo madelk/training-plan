@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useQuery } from '@tanstack/vue-query';
+import loadingIndicator from './loadingIndicator.vue'
 
 interface Todo {
   userId: number;
@@ -14,7 +15,7 @@ const queryFn = async (): Promise<Todo[]> => {
   return new Promise<Todo[]>((resolve) => {
     setTimeout(() => {
       resolve(json);
-    }, 5000);
+    }, 2000);
   });
 };
 
@@ -44,26 +45,8 @@ onMounted(async () => {
 <template>
   <section>
     <h2>Todo List</h2>
-    <p
-      v-if="isLoading"
-      style="text-align: center; font-size: 1.2em; color: gray"
-    >
-      <span
-        class="loader"
-        style="
-          display: inline-block;
-          width: 1em;
-          height: 1em;
-          border: 2px solid #ccc;
-          border-top-color: #007bff;
-          border-radius: 50%;
-          animation: spin 1s linear infinite;
-        "
-      />
-      Loading...
-    </p>
+    <loadingIndicator :is-loading="isLoading" />
     <ul
-      v-else
       style="list-style-type: none; padding: 0"
     >
       <li
