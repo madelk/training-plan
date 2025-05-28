@@ -1,5 +1,7 @@
 {
   "nxConsole.generateAiAgentRules": true,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  "[vue]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  }
 }
