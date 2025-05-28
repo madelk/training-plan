@@ -24,4 +24,5 @@ export default defineNuxtConfig({
     plugins: [nxViteTsPaths()],
   },
   extends: ['@vuetest/increment', '@vuetest/traffic', '@vuetest/user-name'],
+  plugins: ['plugins/vue-query'],
 });
