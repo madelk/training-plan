@@ -1,18 +1,27 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
+const user = ref({
+  id: 1,
+  username: '',
+  email: 'unicorn42@example.com',
+});
+function updateUsername(username: string) {
+  user.value.username = username;
+}
+provide('user', { user, updateUsername });
 
-const navLinks = [
+const navLinks = computed(() => [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/increment', label: 'Increment Number' },
   { to: '/traffic', label: 'Traffic Lights' },
-  { to: '/userName', label: 'User Name' }
-];
+  { to: '/userName', label:  user.value.username || 'not logged in' },
+]);
 
 const route = useRoute();
 const pageName = computed(() => {
   // Find the nav link whose path matches the current route
-  const found = navLinks.find(link => link.to === route.path);
+  const found = navLinks.value.find((link) => link.to === route.path);
   return found ? found.label : 'Vue Test App';
 });
 
@@ -32,7 +41,11 @@ watch(
   <main>
     <header>
       <nav>
-        <NuxtLink v-for="(link) in navLinks" :key="link.to" :to="link.to">
+        <NuxtLink
+          v-for="link in navLinks"
+          :key="link.to"
+          :to="link.to"
+        >
           {{ link.label }}
         </NuxtLink>
       </nav>
@@ -47,7 +60,7 @@ header {
   max-width: 100vw;
 }
 
-nav>a {
+nav > a {
   padding-left: 1rem;
   padding-right: 1rem;
 }

@@ -1,18 +1,20 @@
 <script setup lang="ts">
-import { ButtonHTMLAttributes } from 'vue';
-
-const emit = defineEmits(["buttonClick"])
-defineProps<ButtonHTMLAttributes>()
+const emit = defineEmits(['buttonClick']);
+import type { PropType, ButtonHTMLAttributes } from 'vue';
+defineProps({
+  btnType: {
+    type: String as PropType<ButtonHTMLAttributes['type']>,
+    default: 'submit',
+  },
+});
 </script>
 
 <template>
   <button
-    v-bind="$props"
+    :type="btnType"
     @click="emit('buttonClick')"
   >
-    <slot>
-      Submit
-    </slot>
+    <slot> Submit </slot>
   </button>
 </template>
 
@@ -33,4 +35,3 @@ button {
   }
 }
 </style>
-
