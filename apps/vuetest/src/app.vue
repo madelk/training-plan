@@ -5,7 +5,8 @@ const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/increment', label: 'Increment Number' },
-  { to: '/traffic', label: 'Traffic Lights' }
+  { to: '/traffic', label: 'Traffic Lights' },
+  { to: '/userName', label: 'User Name' }
 ];
 
 const route = useRoute();
@@ -31,11 +32,7 @@ watch(
   <main>
     <header>
       <nav>
-        <NuxtLink
-          v-for="(link) in navLinks" 
-          :key="link.to"
-          :to="link.to"
-        >
+        <NuxtLink v-for="(link) in navLinks" :key="link.to" :to="link.to">
           {{ link.label }}
         </NuxtLink>
       </nav>
@@ -50,7 +47,7 @@ header {
   max-width: 100vw;
 }
 
-nav > a {
+nav>a {
   padding-left: 1rem;
   padding-right: 1rem;
 }
