@@ -10,7 +10,9 @@ defineProps<ButtonHTMLAttributes>()
     v-bind="$props"
     @click="emit('buttonClick')"
   >
-    <slot />
+    <slot>
+      Submit
+    </slot>
   </button>
 </template>
 
