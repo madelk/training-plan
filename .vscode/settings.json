@@ -3,5 +3,9 @@
   "editor.formatOnSave": true,
   "[vue]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "files.autoSave": "afterDelay",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
   }
 }
