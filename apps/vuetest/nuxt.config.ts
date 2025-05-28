@@ -23,6 +23,11 @@ export default defineNuxtConfig({
   vite: {
     plugins: [nxViteTsPaths()],
   },
-  extends: ['@vuetest/increment', '@vuetest/traffic', '@vuetest/user-name'],
+  extends: [
+    '@vuetest/increment',
+    '@vuetest/traffic',
+    '@vuetest/user-name',
+    '@vuetest/todo',
+  ],
   plugins: ['plugins/vue-query'],
 });

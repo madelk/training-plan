@@ -1,16 +1,4 @@
 <script setup lang="ts">
-import { useQuery } from '@tanstack/vue-query';
-
-const fetcher = async () =>
-  await fetch('https://jsonplaceholder.typicode.com/posts').then((response) =>
-    response.json(),
-  );
-
-const { data, suspense } = useQuery({ queryKey: ['test'], queryFn: fetcher });
-
-await suspense();
-console.log("data", JSON.parse(JSON.stringify(data.value)))
-
 
 import { useRoute } from 'vue-router';
 const user = ref({
@@ -28,6 +16,7 @@ const navLinks = computed(() => [
   { to: '/about', label: 'About' },
   { to: '/increment', label: 'Increment Number' },
   { to: '/traffic', label: 'Traffic Lights' },
+  { to: '/todo', label: 'Todo List' },
   { to: '/userName', label: user.value.username || 'not logged in' },
 ]);
 
@@ -64,18 +53,6 @@ watch(
       </nav>
     </header>
     <nuxt-page />
-
-    <!-- <section>
-      <h2>API Response</h2>
-      <ul>
-        <li
-          v-for="post in data"
-          :key="post.id"
-        >
-          {{ post.title }}
-        </li>
-      </ul>
-    </section> -->
   </main>
 </template>
 
