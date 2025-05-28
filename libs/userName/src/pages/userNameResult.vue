@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { FancyButton } from "@vuetest/components"
 const props = defineProps({
   "userName": {
     type: String,
@@ -9,11 +10,11 @@ const emit = defineEmits(["clear-name"])
 </script>
 
 <template>
-  <div v-if="userName">
-    Hi there {{ userName }}
-    <button @click="emit('clear-name')">
+  <div v-if="props.userName">
+    Hi there {{ props.userName }}
+    <FancyButton @click="emit('clear-name')">
       Forget me
-    </button>
+    </FancyButton>
   </div>
 </template>
 

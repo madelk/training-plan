@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import UserNameResult from "./UserNameResult"
+import UserNameResult from "./userNameResult.vue"
+import {FancyButton} from "@vuetest/components";
 import { ref } from 'vue';
 const userName = ref<string | undefined>();
 const submittedName = ref<string>("");
@@ -18,9 +19,9 @@ const clearName = () => {
     v-model="userName"
     placeholder="Enter your name"
   >
-  <button @click="submitName">
+  <FancyButton @click="submitName">
     Submit
-  </button>
+  </FancyButton>
   <UserNameResult 
     :user-name="submittedName"
     @clear-name="clearName"
