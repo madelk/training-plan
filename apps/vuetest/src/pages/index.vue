@@ -128,6 +128,12 @@ export default {
   font-size: 1.5rem; /* Increase font size */
 }
 
+@media (max-width: 768px) {
+  .terminal-window {
+    border: 20px solid var(--border-color); /* Reduce border size on mobile */
+  }
+}
+
 #terminal-content {
   padding-top: 40px; /* Add padding to prevent overlap with the GitHub link */
 }
