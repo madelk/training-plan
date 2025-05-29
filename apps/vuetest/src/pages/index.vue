@@ -29,7 +29,7 @@ const CURSOR_OFFSET_TOP = 18; // Cursor offset from the top
 export default {
   mounted() {
     const paragraphs = [
-      "Hi, I'm Mark Dell and I'm trying to learn Vue! It should be pretty simple to run locally, and I've set up Firebase for login functionality up here somewhere ↖️",
+      "Hi, I'm Mark Dell and I'm trying to learn Vue! It should be pretty simple to run locally, and I've set up Firebase for login functionality up here somewhere 👆",
       "I have a CI pipeline running tests and another deploying builds to GitHub Pages.",
       "This isn't polished yet, but I'm exploring Vue and finding it quite different from React.",
       "There's a few more pages to add, but I wanted to get this running so I can start experimenting.",
