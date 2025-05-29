@@ -31,6 +31,14 @@ export default defineNuxtConfig({
     '@vuetest/todo',
   ],
   plugins: ['plugins/vue-query'],
+  router: {
+    options: {
+      hashMode: true,
+    },
+  },
+  app: {
+    baseURL: '/vue/',
+  },
 });
 
 // npm i
