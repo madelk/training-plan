@@ -64,6 +64,7 @@
     "libs/*"
   ],
   "dependencies": {
-    "@tanstack/vue-query": "^5.77.2"
+    "@tanstack/vue-query": "^5.77.2",
+    "firebase": "^11.8.1"
   }
 }

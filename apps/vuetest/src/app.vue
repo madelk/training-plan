@@ -1,6 +1,9 @@
 <script setup lang="ts">
 
 import { useRoute } from 'vue-router';
+import { auth } from './firebaseConfig';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+
 const user = ref({
   id: 1,
   username: '',
@@ -37,6 +40,26 @@ watch(
     document.title = `Vue Test App - ${pageName.value}`;
   }
 );
+
+const loginError = ref('');
+
+const googleProvider = new GoogleAuthProvider();
+
+async function signInWithGoogle() {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    const userCredential = result.user;
+
+    user.value = {
+      id: parseInt(userCredential.uid, 10) || 0, 
+      username: userCredential.displayName || 'Anonymous',
+      email: userCredential.email || ''
+    };
+    loginError.value = '';
+  } catch (error: any) {
+    loginError.value = error.message || 'An error occurred';
+  }
+}
 </script>
 
 <template>
@@ -52,6 +75,13 @@ watch(
         </NuxtLink>
       </nav>
     </header>
+    <section>
+      <button 
+        @click="signInWithGoogle"
+      >
+        Login with Google
+      </button>
+    </section>
     <nuxt-page />
   </main>
 </template>
