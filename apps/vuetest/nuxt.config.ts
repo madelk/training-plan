@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     host: 'localhost',
     port: 4200,
   },
+  ssr: false,
   typescript: {
     typeCheck: true,
     tsConfig: {
@@ -31,3 +32,7 @@ export default defineNuxtConfig({
   ],
   plugins: ['plugins/vue-query'],
 });
+
+// npm i
+// rm -rf apps/vuetest/.output
+// npx nx run @vuetest/vuetest:build --skip-nx-cache
