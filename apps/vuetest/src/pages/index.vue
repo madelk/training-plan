@@ -74,6 +74,11 @@ export default {
           setTimeout(typeChar, TYPING_SPEED);
         } else {
           currentParagraph++;
+
+          // Add an extra line break between paragraphs
+          const lineBreak = document.createElement('br');
+          terminalContent.insertBefore(lineBreak, cursor);
+
           setTimeout(typeParagraph, PARAGRAPH_DELAY);
         }
       }
@@ -119,6 +124,8 @@ export default {
     transparent 3px
   );
   background-size: 100% 4px; /* Adjust the spacing of the scanlines */
+  text-transform: uppercase; /* Make all text uppercase */
+  font-size: 1.5rem; /* Increase font size */
 }
 
 #terminal-content {
@@ -127,8 +134,8 @@ export default {
 
 #cursor {
   display: inline-block;
-  width: 10px;
-  height: 20px;
+  width: 1em;
+  height: 1.2em;
   background-color: var(--border-color);
   animation: blink 0.5s steps(2, start) infinite;
 }
