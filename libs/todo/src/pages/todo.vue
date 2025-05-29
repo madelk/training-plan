@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { LoadingIndicator } from '@vuetest/components';
-import { onMounted, computed } from 'vue';
+import { onMounted } from 'vue';
 import { getUsers } from './getUsers';
 import { getToDo } from './getToDo';
+import type { Todo } from './getToDo';
 
-const {suspense: todoSuspense, isLoading: todoIsLoading, data: totoData} = getToDo();
+const {suspense: todoSuspense, isLoading: todoIsLoading, data: totoData, setTodo} = getToDo();
 const {
   suspense: usersResult,
   isLoading: usersIsLoading,
@@ -16,6 +17,10 @@ onMounted(async () => {
 });
 
 const isLoading = (todoIsLoading || usersIsLoading);
+
+const toggleTodoCompletion = (todo: Todo) => 
+  setTodo({ ...todo, completed: !todo.completed });
+
 </script>
 
 <template>
@@ -39,6 +44,7 @@ const isLoading = (todoIsLoading || usersIsLoading);
           style="vertical-align: middle"
           type="checkbox"
           :checked="todo.completed"
+          @change="toggleTodoCompletion(todo)"
         >
         <label
           style="margin-left: 10px"
