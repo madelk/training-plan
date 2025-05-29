@@ -29,11 +29,11 @@ const CURSOR_OFFSET_TOP = 18; // Cursor offset from the top
 export default {
   mounted() {
     const paragraphs = [
-      "Hi, I'm Mark Dell and I'm trying to learn Vue! It should be pretty simple to run locally and I got some firebase working for login up here somewhere ↖️",
-      "I have a CI pipeline running a tests and another running builds out to github pages.",
-      "This isn't pretty, but I'm trying to get used to Vue and I'm finding it pretty wild in how it's different from react.",
-      "I have a few more pages to add, but I wanted to get this up and running so I can start playing with it.",
-      "Oh and I started this project with NX, I'm looking at how a large scale Vue app might scale and be organised. Always trying to run before I can walk."
+      "Hi, I'm Mark Dell and I'm trying to learn Vue! It should be pretty simple to run locally, and I've set up Firebase for login functionality up here somewhere ↖️",
+      "I have a CI pipeline running tests and another deploying builds to GitHub Pages.",
+      "This isn't polished yet, but I'm exploring Vue and finding it quite different from React.",
+      "There's a few more pages to add, but I wanted to get this running so I can start experimenting.",
+      "Oh, and I started this project with NX. I'm exploring how a large-scale Vue app might be structured and organized. Always trying to run before I can walk."
     ];
 
     const terminalContent = document.getElementById('terminal-content');
