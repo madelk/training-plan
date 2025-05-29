@@ -1,7 +1,7 @@
 <script setup lang="ts">
-defineProps<{ 
-	isLoading: any;
-}>()
+defineProps<{
+  isLoading: any;
+}>();
 </script>
 
 <template>
@@ -12,14 +12,14 @@ defineProps<{
     <span
       class="loader"
       style="
-	          display: inline-block;
-	          width: 1em;
-	          height: 1em;
-	          border: 2px solid #ccc;
-	          border-top-color: #007bff;
-	          border-radius: 50%;
-	          animation: spin 1s linear infinite;
-	        "
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        border: 2px solid #ccc;
+        border-top-color: #007bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      "
     />
     <br>
     Loading...
