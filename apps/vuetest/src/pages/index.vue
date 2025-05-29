@@ -1,5 +1,18 @@
 <template>
   <div class="terminal-window">
+    <div class="github-link">
+      <a 
+        href="https://github.com/madelk/vue" 
+        target="_blank"
+      >
+        <img 
+          src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" 
+          alt="GitHub Icon" 
+          class="github-icon"
+        >
+        GitHub
+      </a>
+    </div>
     <div id="terminal-content">
       <!-- The paragraphs will be dynamically added here -->
       <span id="cursor" />
@@ -16,7 +29,7 @@ const CURSOR_OFFSET_TOP = 18; // Cursor offset from the top
 export default {
   mounted() {
     const paragraphs = [
-      "Hi, I'm trying to learn Vue and I've got my sauce over at <a href=\"https://github.com/madelk/vue\" target=\"_blank\">GitHub</a> so you can see how I made this mess. It should be pretty simple to run locally and I got some firebase working for login up here somewhere ↖️",
+      "Hi, I'm Mark Dell and I'm trying to learn Vue! It should be pretty simple to run locally and I got some firebase working for login up here somewhere ↖️",
       "I have a CI pipeline running a tests and another running builds out to github pages.",
       "This isn't pretty, but I'm trying to get used to Vue and I'm finding it pretty wild in how it's different from react.",
       "I have a few more pages to add, but I wanted to get this up and running so I can start playing with it.",
@@ -86,6 +99,9 @@ export default {
   margin: 20px auto;
   position: relative;
 }
+#terminal-content {
+  padding-top: 40px; /* Add padding to prevent overlap with the GitHub link */
+}
 #cursor {
   display: inline-block;
   width: 10px;
@@ -110,5 +126,26 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+.github-link {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: center;
+}
+.github-link a {
+  color: #00ff00;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  display: inline-flex;
+  align-items: center;
+}
+.github-link a:hover {
+  text-decoration: underline;
+}
+.github-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
 }
 </style>
