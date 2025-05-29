@@ -13,6 +13,9 @@
           {{ link.label }}
         </NuxtLink>
       </li>
+      <li>
+        <GoogleLoginButton />
+      </li>
     </ul>
   </nav>
 </template>

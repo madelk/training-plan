@@ -86,27 +86,50 @@ export default {
 };
 </script>
 
-<style scoped>
-.terminal-window {
-  font-family: 'Courier New', Courier, monospace;
-  color: #00ff00;
-  background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid #333;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-  max-width: 800px;
-  margin: 20px auto;
-  position: relative;
+<style>
+:root {
+  --background-color: #483AAA;
+  --border-color: #867ADE;
+  --text-color: #867ADE;
 }
+</style>
+
+<style scoped>
+@import url('https://fonts.cdnfonts.com/css/commodore-64-pixelized');
+
+.terminal-window {
+  font-family: 'Commodore 64 Pixelized', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border: 60px solid var(--border-color);
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: calc(100vh - 55px); /* Leave room for the navbar */
+  margin: 0;
+  position: fixed;
+  top: 55px; /* Offset for the navbar */
+  left: 0;
+  filter: blur(0.6px); /* Apply a slight blur effect */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  background-size: 100% 4px; /* Adjust the spacing of the scanlines */
+}
+
 #terminal-content {
   padding-top: 40px; /* Add padding to prevent overlap with the GitHub link */
 }
+
 #cursor {
   display: inline-block;
   width: 10px;
   height: 20px;
-  background-color: #00ff00;
+  background-color: var(--border-color);
   animation: blink 0.5s steps(2, start) infinite;
 }
 @keyframes blink {
@@ -121,7 +144,7 @@ p {
   margin-bottom: 10px;
 }
 a {
-  color: #00ff00;
+  color: var(--text-color);
   text-decoration: none;
 }
 a:hover {
@@ -134,7 +157,7 @@ a:hover {
   text-align: center;
 }
 .github-link a {
-  color: #00ff00;
+  color: var(--text-color);
   text-decoration: none;
   font-family: 'Courier New', Courier, monospace;
   display: inline-flex;

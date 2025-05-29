@@ -37,9 +37,6 @@ watch(
     <header>
       <Navbar />
     </header>
-    <section>
-      <GoogleLoginButton />
-    </section>
     <nuxt-page />
   </main>
 </template>

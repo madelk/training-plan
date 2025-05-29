@@ -44,12 +44,10 @@ async function signInWithGoogle() {
   font-weight: bold;
   border: 1px solid #4285F4;
   border-radius: 4px;
-  padding: 10px 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 1rem auto;
 }
 
 .google-login-button:hover {
