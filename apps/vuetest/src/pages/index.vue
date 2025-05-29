@@ -22,7 +22,7 @@
 
 <script>
 const TYPING_SPEED = 20; // Typing speed in milliseconds
-const PARAGRAPH_DELAY = 500; // Delay before the next paragraph in milliseconds
+const PARAGRAPH_DELAY = 1000; // Delay before the next paragraph in milliseconds
 const CURSOR_OFFSET_LEFT = 20; // Cursor offset from the left
 const CURSOR_OFFSET_TOP = 18; // Cursor offset from the top
 
