@@ -64,6 +64,9 @@
     "libs/*"
   ],
   "dependencies": {
+    "@nx/expo": "^21.2.0",
+    "@nx/next": "^21.2.0",
+    "@nx/react-native": "^21.2.0",
     "@tanstack/vue-query": "^5.77.2",
     "firebase": "^11.8.1"
   }
