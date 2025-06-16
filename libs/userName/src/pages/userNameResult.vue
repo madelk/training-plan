@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FancyButton } from "@vuetest/components"
+import { FancyButton } from "@study/components"
 const props = defineProps({
   "userName": {
     type: String,

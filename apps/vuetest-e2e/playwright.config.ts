@@ -24,7 +24,7 @@ export default defineConfig({
   },
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'npx nx run @vuetest/vuetest:serve-static',
+    command: 'npx nx run @study/vuetest:serve-static',
     url: 'http://localhost:4200',
     reuseExistingServer: true,
     cwd: workspaceRoot,

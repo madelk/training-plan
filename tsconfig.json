@@ -11,6 +11,30 @@
     },
     {
       "path": "./libs/increment"
+    },
+    {
+      "path": "./apps/nexttest-e2e"
+    },
+    {
+      "path": "./apps/nexttest"
+    },
+    {
+      "path": "./apps/study-next-e2e"
+    },
+    {
+      "path": "./apps/study-next"
+    },
+    {
+      "path": "./apps/study-rn-e2e"
+    },
+    {
+      "path": "./apps/study-rn"
+    },
+    {
+      "path": "./apps/study-expo-e2e"
+    },
+    {
+      "path": "./apps/study-expo"
     }
   ]
 }

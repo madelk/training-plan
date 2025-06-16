@@ -1,10 +1,10 @@
 {
-  "name": "@vuetest/vuetest-e2e",
+  "name": "@study/vuetest-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@vuetest/vuetest"
+      "@study/vuetest"
     ]
   }
 }

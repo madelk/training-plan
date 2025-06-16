@@ -1,5 +1,5 @@
 {
-  "name": "@vuetest/context",
+  "name": "@study/context",
   "version": "0.0.1",
   "module": "./src/index.ts",
   "types": "./src/index.ts",

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { inject, ref } from 'vue';
 import UserNameResult from './userNameResult.vue';
-import { FancyButton } from '@vuetest/components';
-import type { UserContext } from '@vuetest/context';
+import { FancyButton } from '@study/components';
+import type { UserContext } from '@study/context';
 
 const { user, updateUsername } = inject('user') as UserContext;
 const userName = ref<string | undefined>(user?.username || '');

@@ -25,10 +25,10 @@ export default defineNuxtConfig({
     plugins: [nxViteTsPaths()],
   },
   extends: [
-    '@vuetest/increment',
-    '@vuetest/traffic',
-    '@vuetest/user-name',
-    '@vuetest/todo',
+    '@study/increment',
+    '@study/traffic',
+    '@study/user-name',
+    '@study/todo',
   ],
   plugins: ['plugins/vue-query'],
   router: {
@@ -43,4 +43,4 @@ export default defineNuxtConfig({
 
 // npm i
 // rm -rf apps/vuetest/.output
-// npx nx run @vuetest/vuetest:build --skip-nx-cache
+// npx nx run @study/vuetest:build --skip-nx-cache

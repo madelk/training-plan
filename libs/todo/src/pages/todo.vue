@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LoadingIndicator } from '@vuetest/components';
+import { LoadingIndicator } from '@study/components';
 import { onMounted } from 'vue';
 import { getUsers } from './getUsers';
 import { getToDo } from './getToDo';
