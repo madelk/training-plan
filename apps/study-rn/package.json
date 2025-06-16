@@ -6,11 +6,13 @@
     "build:tailwind": "node src/styles/build-tailwind.js"
   },
   "dependencies": {
-    "@nx/js": "^21.2.0",
     "@types/node": "^24.0.2"
   },
   "devDependencies": {
+    "@nx/js": "^21.2.0",
+    "@nx/workspace": "^21.2.0",
     "autoprefixer": "^10.4.21",
+    "nx": "^21.2.0",
     "postcss": "^8.5.5",
     "postcss-cli": "^11.0.1",
     "tailwind-rn": "^4.2.0"

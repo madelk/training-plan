@@ -4,6 +4,12 @@
   "include": [],
   "references": [
     {
+      "path": "../context"
+    },
+    {
+      "path": "../components"
+    },
+    {
       "path": "./tsconfig.lib.json"
     },
     {

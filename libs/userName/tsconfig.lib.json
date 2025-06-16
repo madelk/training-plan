@@ -38,5 +38,13 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue"
+  ],
+  "references": [
+    {
+      "path": "../context/tsconfig.lib.json"
+    },
+    {
+      "path": "../components/tsconfig.lib.json"
+    }
   ]
 }
