@@ -4,7 +4,10 @@
     "outDir": "./out-tsc/jest",
     "jsx": "react-jsx",
     "types": ["jest", "node"],
-    "noUnusedLocals": false
+    "noUnusedLocals": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "es2015"
   },
   "files": ["src/test-setup.ts"],
   "include": [

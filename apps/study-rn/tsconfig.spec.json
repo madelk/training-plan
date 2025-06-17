@@ -5,7 +5,10 @@
     "jsx": "react-jsx",
     "types": ["jest", "node"],
     "noUnusedLocals": false,
-    "lib": ["dom"]
+    "lib": ["dom"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "es2015"
   },
   "files": ["src/test-setup.ts"],
   "include": [

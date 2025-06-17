@@ -1,4 +1,4 @@
-import type { Task } from '@study/api';
+import type { Task } from './types';
 
 export async function getTasks() {
   const res = await fetch('http://localhost:3000/tasks');

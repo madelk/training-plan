@@ -2,6 +2,10 @@
   "name": "@study/study-rn-e2e",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "test": "detox test --configuration ios.sim.debug --config jest.config.js",
+    "build": "detox build --configuration ios.sim.debug"
+  },
   "nx": {
     "implicitDependencies": [
       "@study/study-rn"
