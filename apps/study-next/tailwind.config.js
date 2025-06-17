@@ -14,10 +14,22 @@ module.exports = {
   content: [
     './{src,pages,components,app}/**/*.{ts,tsx,js,jsx,html}',
     '!./{src,pages,components,app}/**/*.{stories,spec}.{ts,tsx,js,jsx,html}',
-    //     ...createGlobPatternsForDependencies(__dirname)
+    '../../libs/components/**/*.{ts,tsx,js,jsx,html}',
+    '!../../libs/components/**/*.{stories,spec}.{ts,tsx,js,jsx,html}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#3B82F6',
+        secondary: '#10B981',
+        background: '#F3F4F6',
+      },
+      spacing: {
+        72: '18rem',
+        84: '21rem',
+        96: '24rem',
+      },
+    },
   },
   plugins: [],
 };

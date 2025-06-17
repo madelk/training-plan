@@ -1,3 +1,7 @@
+---
+applyTo: '**'
+---
+
 This is a repo designed for the user to learn some languages. Take a look at /study-plan.md to understand what the user wants to learn
 The user wants to learn the languaves, but not necessarily how to get things set up. So help the user set up the frameworks as much as possible.
 Set up all the libraries and frameworks using NX ready for the user to start learning the languages.
